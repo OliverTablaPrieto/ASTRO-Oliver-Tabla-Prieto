@@ -1,0 +1,65 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Titol from "../components/Titol.astro"
+import cv from "../../data/cv.json";
+import { Image } from 'astro:assets';
+import iniciImage from '../assets/inici.png';
+import pugImage from '../assets/pugscreen.gif';
+---
+
+<!--Aqui es passa el contingut mitjançat l'slot -->
+<Layout>
+	<Titol
+		title="Em dic Oliver"
+	/>	
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente molestias, accusantium doloremque ex optio, nobis enim hic asperiores atque ratione sed eius. Tenetur, culpa ratione?</p>
+	<hr/>
+
+	<h2>Personal Projects</h2>
+	<p>Selecciona un proyecte</p>
+	<div>
+		<Card
+			image = {pugImage}
+			title = "Projecte-1"
+    		description = "El primer proyecte de Astro"
+		/>
+		<Card
+			image = {pugImage}
+			title = "Projecte-1"
+    		description = "El primer proyecte de Astro"
+		/>
+		<Card
+			image = {pugImage}
+			title = "Projecte-1"
+    		description = "El primer proyecte de Astro"
+		/>
+		<Card
+			image = {pugImage}
+			title = "Projecte-1"
+    		description = "El primer proyecte de Astro"
+		/>
+	<div/>
+	
+	<section class="hero">
+		<h2>{cv.name}</h2>
+		<h3>{cv.title}</h3>
+		<p>{cv.profile_summary}</p>
+
+	</section>
+</Layout>
+
+<style>
+	div{
+		display:flex;
+		flex-wrap: wrap;
+		width: 60%;
+		margin: 10px;
+		padding: 10px;
+		justify-content: space-around;
+		border: 1px solid black;
+		background: linear-gradient(0deg,rgba(0, 178, 255, 1) 0%, rgba(0, 255, 179, 1) 70%);
+		border-radius: 20px;
+	}
+
+</style>

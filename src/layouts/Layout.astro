@@ -1,0 +1,79 @@
+---
+import Navegacio from "../components/Navegacio.astro";
+import Peu from "../components/Peu.astro";
+import Boto from "../components/Boto.astro"
+---
+<html lang="ca">
+    <head>
+        <meta charset="UTF-8">
+        <title>La meva web</title>
+        <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+    </head>
+    <body>
+        <header>
+            <Navegacio/>
+        </header>
+        <main>
+            <slot/>
+            <!-- Aqui va el contingut de la pagina -->
+             <Boto
+                title = "Hola"
+                enllac = "../informacio"
+            />
+            <br>
+            <Boto
+                title = "Hola"
+                enllac = "../contacte"
+            />
+        </main>
+        <Peu
+            peu="Copyright 2026"
+        />
+
+    </body>
+</html>
+<style is:global>
+    
+    h1{
+        font-family: "Press Start 2P", system-ui;
+        font-size: 50px;
+        margin-top:80px;
+    }
+    body {
+        margin: 0;
+        min-height: 100vh;
+        background: linear-gradient(180deg,rgba(0, 178, 255, 1) 0%,rgba(0, 255, 179, 1) 100%);
+        font-family: system-ui, sans-serif;
+    }
+    header{
+        margin: 0px;
+        padding: 10px;
+        background: linear-gradient(0deg,rgba(0, 178, 255, 1) 0%, rgba(0, 255, 179, 1) 100%);
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8); 
+    }
+    main {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    section {
+        background: linear-gradient(0deg,rgba(0, 178, 255, 1) 0%, rgba(0, 255, 179, 1) 100%);
+        border-radius: 20px;
+        padding: 50px;
+        margin: 50px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    }
+    footer{
+        margin-left: 50px;
+        padding: 10px;
+    }
+</style>

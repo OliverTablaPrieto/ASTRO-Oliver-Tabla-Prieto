@@ -1,0 +1,46 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  image: string;
+  title: string;
+  description?: string;
+}
+
+const {
+  image = "",
+  title = "Títol per defecte",
+  description = "Descripció per defecte",
+} = Astro.props as Props;
+---
+
+<div>
+  <Image
+    src={image}
+    alt={title}
+    width={350}
+    height={200}
+  />
+
+  <h2>{title}</h2>
+
+  {/* Mostra només <p> si existeix */}
+  {description && <p>{description}</p>}
+</div>
+
+<style>
+    div{
+        border: 1px solid black;
+        width: 400px;
+        padding: 10px;
+        text-align: center;
+        margin: 10px;
+        background: linear-gradient(0deg,rgba(0, 178, 255, 1) 0%, rgba(0, 255, 179, 1) 70%)
+    }
+
+    h2{
+        color: blueviolet;
+        font-size: 44px;
+    }
+</style>
+

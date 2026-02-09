@@ -1,0 +1,36 @@
+---
+interface Props{
+    title:string;
+    enllac:string;
+}
+const{ title="text per defecte", enllac="#" } = Astro.props
+---
+
+        <div>
+            <a href={enllac}>
+                <p>{title}</p>
+            </a>
+        </div>
+        
+
+
+    <style>
+        div{
+            background: linear-gradient(0deg,rgba(0, 255, 229, 1) 0%, rgba(0, 154, 181, 1) 100%);
+            width: 150px;
+            height: 50px;
+            border-radius: 100px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+            
+        }
+
+        a{
+            display: flex;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+    </style>

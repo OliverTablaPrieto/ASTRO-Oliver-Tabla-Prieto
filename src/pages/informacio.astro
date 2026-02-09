@@ -1,0 +1,34 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Title from "../components/Titol.astro";
+import Navegacio from "../components/Navegacio.astro";
+import cv from "../../data/cv.json";
+---
+
+
+<Layout>
+    
+    <Title
+        title = "Informacio"
+    />
+    <hr>
+    <section class="hero">
+        <p>Hi there, I'm Alex. I build my own products, along side working with some amazing companies to help them build theirs.
+Most recently, I was working with MoonPay to help build the future of payments. Before that, I was working with Monzo - the fastest growing bank in the UK. Originally joining as a product designer, I transitioned into a web engineer role where I worked with a variety of teams to help rethink modern day banking for their millions of customers.
+I also worked with Kalo (which eventually became Polywork) where I was the first UI Engineering hire. My responsibilities included building out the design system as well as ensuring a high bar of design quality across the product.
+I've always bounced somewhere between design and engineering, however the common thread has always been my love for building things that people love to use.
+If you're interested in working together, feel free to reach out to me here: hey@alexpate.com.</p>
+    <h2>Experience</h2>
+    <ul>{cv.experience.map((edu => (
+        <hr/>
+        <li>{edu.position}</li>
+        <li>{edu.company}</li>
+        <li>{edu.location}</li>
+        <li>{edu.duration}</li>
+        <li>{edu.responsibilities}</li>
+    )))}</ul>
+</section>
+
+</Layout>
+
