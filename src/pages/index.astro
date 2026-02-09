@@ -6,6 +6,9 @@ import cv from "../../data/cv.json";
 import { Image } from 'astro:assets';
 import iniciImage from '../assets/inici.png';
 import pugImage from '../assets/pugscreen.gif';
+import infoImage from '../assets/info.png';
+import writeImage from '../assets/writing.png';
+import contImage from '../assets/contacte.png';
 ---
 
 <!--Aqui es passa el contingut mitjançat l'slot -->
@@ -20,24 +23,28 @@ import pugImage from '../assets/pugscreen.gif';
 	<p>Selecciona un proyecte</p>
 	<div>
 		<Card
-			image = {pugImage}
-			title = "Projecte-1"
+			image = {iniciImage}
+			title = "Inici"
     		description = "El primer proyecte de Astro"
+			enllac ="/inici"
 		/>
 		<Card
-			image = {pugImage}
-			title = "Projecte-1"
+			image = {infoImage}
+			title = "Informacio"
     		description = "El primer proyecte de Astro"
+			enllac ="/informacio"
 		/>
 		<Card
-			image = {pugImage}
-			title = "Projecte-1"
+			image = {writeImage}
+			title = "Writing"
     		description = "El primer proyecte de Astro"
+			enllac ="/escrits"
 		/>
 		<Card
-			image = {pugImage}
-			title = "Projecte-1"
+			image = {contImage}
+			title = "Contacte"
     		description = "El primer proyecte de Astro"
+			enllac ="/contacte"
 		/>
 	</div>
 	<section class="hero">

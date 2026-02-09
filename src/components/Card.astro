@@ -5,18 +5,18 @@ interface Props {
   image: string;
   title: string;
   description?: string;
-  a: string;
+  enllac:string;
 }
 
 const {
   image = "",
   title = "Títol per defecte",
   description = "Descripció per defecte",
-  a= "#"
+  enllac= "#"
 } = Astro.props as Props;
 ---
 
-<a href={a} class="card">
+<a href={enllac} class="card">
   <Image
     src={image}
     alt={title}
@@ -33,6 +33,7 @@ const {
 
 <style>
     .card{
+        display: block; 
         width: 400px;
         padding: 15px;
         text-align: left;
@@ -43,6 +44,7 @@ const {
         text-decoration: none;
         color: inherit;
         transition: background 1s ease, transform 0.5s ease;
+        overflow: hidden; 
     }
 
     .card:hover {
@@ -53,6 +55,7 @@ const {
     .img{
         display: block;
         margin: 0 auto; 
+        border: 5px solid rgba(0, 0, 0, 0.5);;
         border-radius: 10px;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
     }
