@@ -2,13 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Titol from "../components/Titol.astro"
-import cv from "../../data/cv.json";
-import { Image } from 'astro:assets';
-import iniciImage from '../assets/inici.png';
-import pugImage from '../assets/pugscreen.gif';
-import infoImage from '../assets/info.png';
-import writeImage from '../assets/writing.png';
-import contImage from '../assets/contacte.png';
+import cv from "../data/cv.json";
 ---
 
 <!--Aqui es passa el contingut mitjançat l'slot -->
@@ -22,31 +16,14 @@ import contImage from '../assets/contacte.png';
 	<h2>Personal Projects</h2>
 	<p>Selecciona un proyecte</p>
 	<div>
+		{cv.projects.map((project) => (
 		<Card
-			image = {iniciImage}
-			title = "Inici"
-    		description = "El primer proyecte de Astro"
-			enllac ="/inici"
+			image={project.image}
+			title={project.name}
+			description={project.description}
+			enllac={`/projectes/${project.id}`}
 		/>
-		<Card
-			image = {infoImage}
-			title = "Informacio"
-    		description = "El primer proyecte de Astro"
-			enllac ="/informacio"
-		/>
-		<Card
-			image = {writeImage}
-			title = "Writing"
-    		description = "El primer proyecte de Astro"
-			enllac ="/escrits"
-		/>
-		<Card
-			image = {contImage}
-			title = "Contacte"
-    		description = "El primer proyecte de Astro"
-			enllac ="/contacte"
-		/>
-	</div>
+		))}
 	<section class="hero">
 		<h2>{cv.name}</h2>
 		<h3>{cv.title}</h3>

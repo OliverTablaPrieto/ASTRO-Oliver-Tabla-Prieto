@@ -1,0 +1,45 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import cv from "../../data/cv.json";
+import Boto from "../../components/Boto.astro";
+
+export async function getStaticPaths() {
+  return cv.projects.map((project) => ({
+    params: { slug: project.id },
+  }));
+}
+
+const { slug } = Astro.params;
+
+const project = cv.projects.find(
+  (p) => p.id === slug
+);
+
+if (!project) {
+  return Astro.redirect("/404");
+}
+---
+
+<Layout
+  title={`${project.name} | Projectes`}
+  description={project.description}
+  >
+  <h1>{project.name}</h1>
+
+  <img src={project.image} alt={project.name} />
+
+  <p>{project.description}</p>
+
+
+  <Boto
+                title = "Tornar al inici"
+                enllac = "../"
+  />
+</Layout>
+
+<style>
+
+    img{
+        width: 800px;
+    }
+</style>

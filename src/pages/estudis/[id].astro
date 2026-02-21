@@ -1,0 +1,50 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import estudisData from '../../data/cv.json';
+import Boto from "../../components/Boto.astro";
+
+
+export async function getStaticPaths() {
+  return estudisData.education.map((estudi) => ({
+    params: {
+      id: estudi.id.toString(),
+    },
+  }));
+}
+
+const { id } = Astro.params;
+
+const estudi = estudisData.education.find(
+  (estudi) => estudi.id.toString() === id
+);
+
+if (!estudi) {
+  return Astro.redirect('/404');
+}
+---
+
+<Layout
+  title={`${estudi.degree} | Educació`}
+  description={`Estudis de ${estudi.degree} a ${estudi.institution}`}
+>
+  <h1>{estudi.degree}</h1>
+  <p><strong>Centre:</strong> {estudi.institution}</p>
+  <p><strong>Període:</strong> {estudi.year}</p>
+
+  <Boto
+                title = "Tornar al llistat"
+                enllac = "../informacio"
+  />
+
+</Layout>
+
+<style>
+    h1{
+        text-align: center;
+        font-size: 40px;
+    }
+
+    a{
+
+    }
+</style>

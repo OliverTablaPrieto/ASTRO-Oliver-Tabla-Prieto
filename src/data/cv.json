@@ -53,11 +53,13 @@
         }
     ],
     "education": [{
+            "id": 1,
             "degree": "FP de Desenvolupament d'Aplicacions Web",
             "institution": "FP Núria",
             "year": "2012 - 2014"
         },
         {
+            "id": 2,
             "degree": "Grau en Enginyeria Informàtica",
             "institution": "Universitat Pompeu Fabra",
             "year": "2014 - 2018"
@@ -69,28 +71,32 @@
         { "language": "Anglès", "level": "Avançat" }
     ],
     "projects": [{
+            "id": "taskmanager-app",
             "name": "TaskManager App",
             "description": "Aplicació de gestió de tasques amb React i Firebase.",
             "url": "https://taskmanager.dev",
             "image": "/src/assets/inici.png"
         },
         {
+            "id": "e-commerce-platform",
             "name": "E-commerce Platform",
             "description": "Plataforma de comerç electrònic desenvolupada amb Vue.js i Node.js.",
             "url": "https://ecommerce.example.com",
-            "image": "/src/assets/pugscreen.gif"
+            "image": "/src/assets/info.png"
         },
         {
+            "id": "blog-cms",
             "name": "Blog CMS",
             "description": "Sistema de gestió de continguts per blogs amb Astro i Markdown.",
             "url": "https://blogcms.dev",
-            "image": "/src/assets/pugscreen.gif"
+            "image": "/src/assets/writing.png"
         },
         {
+            "id": "fitness-tracker",
             "name": "Fitness Tracker",
             "description": "Aplicació per monitoritzar entrenaments i progrés físic.",
             "url": "https://fitnesstracker.dev",
-            "image": "/src/assets/pugscreen.gif"
+            "image": "/src/assets/contacte.png"
         }
     ],
     "blog_posts": [{

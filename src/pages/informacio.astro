@@ -1,34 +1,65 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
-import Title from "../components/Titol.astro";
-import Navegacio from "../components/Navegacio.astro";
-import cv from "../../data/cv.json";
+import Layout from '../layouts/Layout.astro';
+import cvData from '../data/cv.json';
 ---
 
+<Layout title="Informació" description="Formació acadèmica">
+  <h2>Educació</h2>
 
-<Layout>
-    
-    <Title
-        title = "Informacio"
-    />
-    <hr>
-    <section class="hero">
-        <p>Hi there, I'm Alex. I build my own products, along side working with some amazing companies to help them build theirs.
-Most recently, I was working with MoonPay to help build the future of payments. Before that, I was working with Monzo - the fastest growing bank in the UK. Originally joining as a product designer, I transitioned into a web engineer role where I worked with a variety of teams to help rethink modern day banking for their millions of customers.
-I also worked with Kalo (which eventually became Polywork) where I was the first UI Engineering hire. My responsibilities included building out the design system as well as ensuring a high bar of design quality across the product.
-I've always bounced somewhere between design and engineering, however the common thread has always been my love for building things that people love to use.
-If you're interested in working together, feel free to reach out to me here: hey@alexpate.com.</p>
-    <h2>Experience</h2>
-    <ul>{cv.experience.map((edu => (
-        <hr/>
-        <li>{edu.position}</li>
-        <li>{edu.company}</li>
-        <li>{edu.location}</li>
-        <li>{edu.duration}</li>
-        <li>{edu.responsibilities}</li>
-    )))}</ul>
-</section>
-
+  <ul>
+    {cvData.education.map((edu) => (
+      <li>
+        <a href={`/estudis/${edu.id}`}>
+          {edu.degree} - {edu.institution} ({edu.year})
+        </a>
+      </li>
+    ))}
+  </ul>
 </Layout>
+
+<style>
+    h2{
+        font-size: 60px;
+        font-family: "Press Start 2P", system-ui;
+    }
+    ul{
+		display:flex;
+		flex-wrap: wrap;
+		width: 60%;
+		margin: 10px;
+		padding: 30px;
+		justify-content: space-around;
+		border-radius: 20px;
+		background: linear-gradient(360deg,rgba(71, 194, 255, 1) 0%, rgba(87, 255, 106, 1) 100%);
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+        list-style: none;
+	}
+    }
+    li{
+        display:flex;
+		flex-wrap: wrap;
+        margin: 20px;
+        list-style: none; 
+    }
+
+    li, a{
+        transition: background 1s ease, transform 0.5s ease; 
+        background: linear-gradient(0deg,rgba(0, 178, 255, 1) 0%, rgba(0, 255, 179, 1) 100%);
+        border-radius: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+    }
+
+    a{
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        padding: 15px;
+
+         
+    }
+    li:hover{
+            transform: translateY(-5px);
+            filter: brightness(0.7); 
+    }
+</style>
 
