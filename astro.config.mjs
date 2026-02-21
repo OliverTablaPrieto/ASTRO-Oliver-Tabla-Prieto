@@ -2,6 +2,5 @@ import { defineConfig } from 'astro/config';
 
 export default defineConfig({
   site: 'https://olivertablaprieto.github.io',
-  base: '/'
+  base: '/ASTRO-Oliver-Tabla-Prieto', 
 });
-
