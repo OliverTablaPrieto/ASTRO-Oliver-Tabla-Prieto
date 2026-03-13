@@ -1,0 +1,33 @@
+---
+import { Image } from 'astro:assets';
+import projectImage from '../assets/projecte-web-home.png';
+import projectImage2 from '../assets/projecte-web-info.png';
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+    <section>
+        <Image
+        src={projectImage}
+        alt="Captura de la página principal del proyecto web con menú superior y sección destacada"
+        width={550}
+        height={350}
+        />
+
+        <Image
+        src={projectImage2}
+        alt="Captura de la página de informacio amb 2 seccions a llegir"
+        width={550}
+        height={350}
+        />
+    </section>
+</Layout>
+
+<style>
+    section{
+        display: flex;
+        justify-content: space-between;
+    }
+</style>
+
+
